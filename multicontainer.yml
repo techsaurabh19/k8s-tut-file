@@ -1,0 +1,22 @@
+apiVersion : v1
+kind: Pod
+
+metadata:
+  name: myfirstpod
+  labels:
+    newlable: first
+    newlabel2: second
+    env: prod
+
+spec:
+  containers:
+    - name: firstcontainer
+      image: coolgourav147/nginx-custom
+      env:
+        - name: myname
+          value: saurabh
+        - name: city
+          value: Jaipur
+      args: ["sleep","3600"]
+    - name: secondcontainer
+      image: coolgourav147/nginx-custom
